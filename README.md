@@ -1,24 +1,19 @@
-# vue-ts-demo
+# 说明
+
+本项目是作为 h5 项目的模板而出现，技术栈为 vue2+vuex+ts+axios+vant-ui
 
 ## Project setup
-```
-npm install
-```
 
-### Compiles and hot-reloads for development
-```
+```bash
+# 安装依赖
+npm run install
+
+# 开发
 npm run serve
-```
 
-### Compiles and minifies for production
-```
+# 构建
 npm run build
-```
 
-### Lints and fixes files
-```
+# lint
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
