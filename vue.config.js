@@ -1,6 +1,7 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable @typescript-eslint/no-var-requires */
-/* eslint-disable @typescript-eslint/camelcase */
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
+/* eslint-disable global-require */
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = {
   // 项目部署的基础路径（服务器部署的目录）
@@ -77,15 +78,15 @@ module.exports = {
   //     before: app => {}
   // },
 
-  configureWebpack: config => {
+  configureWebpack: (config) => {
     if (process.env.NODE_ENV === 'production') {
       // 为生产环境修改配置
       // 去除console
-      config.optimization.minimizer[0].options.terserOptions.compress.drop_console = true
+      config.optimization.minimizer[0].options.terserOptions.compress.drop_console = true;
 
       if (process.env.APP_NODE_ENV === 'analysis') {
         // 分析打包依赖
-        config.plugins.push(new BundleAnalyzerPlugin())
+        config.plugins.push(new BundleAnalyzerPlugin());
       }
     } else {
       // 为开发环境修改配置
@@ -93,5 +94,5 @@ module.exports = {
   },
 
   // 第三方插件的选项
-  pluginOptions: {}
-}
+  pluginOptions: {},
+};

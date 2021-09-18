@@ -1,23 +1,28 @@
 <template>
-    <div class="first-page-wrap">
+    <Container class="first-page-wrap">
         <div>计数：{{ count }}</div>
         <div>计算属性：{{ computedCount }}</div>
-        <Count :count="count" @change="countChange" />
-    </div>
+        <button @click="showCount">显示子组件</button>
+        <Count v-model="show" :count="count" @change="countChange" />
+    </Container>
 </template>
 
 <script lang="ts">
 import { Component, Vue, Watch } from 'vue-property-decorator';
+
+import Container from '@/components/Container.vue';
 import Count from './Count.vue';
 
 @Component({
     name: 'FirstPage',
     components: {
         Count,
+        Container,
     },
 })
 export default class FirstPage extends Vue {
     count = 0;
+    show = true;
 
     @Watch('count')
     onCountChange(newVal: number, oldVal: number) {
@@ -37,6 +42,9 @@ export default class FirstPage extends Vue {
 
     countChange(count: number) {
         this.count = count;
+    }
+    showCount() {
+        this.show = true;
     }
 }
 </script>

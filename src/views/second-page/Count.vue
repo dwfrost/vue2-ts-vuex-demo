@@ -1,28 +1,30 @@
 <template>
-    <div class="hello-world-wrap">
-        <div>子组件count：{{ count }}</div>
+    <div class="count-wrap">
         <button @click="add">+</button>
     </div>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Emit, Vue } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
+import { State, Getter, Action, Mutation, namespace } from 'vuex-class';
+
+import { State as StateCount } from '@/store/modules/count';
+const storeCount = namespace('count');
 
 @Component({
-    name: 'FirstPage',
+    name: 'Count',
     components: {},
 })
-export default class Home extends Vue {
-    @Prop({ default: 0 }) count!: number;
-
-    created() {}
-    mounted() {}
-
-    @Emit()
-    add() {
-        return this.count++;
-    }
+export default class Count extends Vue {
+    @storeCount.Mutation('add') add!: (param: number) => void;
+    @storeCount.Action('modifyInfo') modifyInfo!: (param: StateCount) => void;
 }
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.count-wrap {
+    border-top: 1px solid;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+</style>
