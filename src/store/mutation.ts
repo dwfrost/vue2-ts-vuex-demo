@@ -1,7 +1,8 @@
-import { State, UserInfo } from "./state";
+import { State, UserInfo } from './state';
+
 const mutation = {
-  modifyUserInfo(state: State, payload: UserInfo) {
-    state.userInfo = { ...state.userInfo, ...payload }
+  modifyUserInfo(state: State, payload: UserInfo):void {
+    state.userInfo = { ...state.userInfo, ...payload };
   },
 };
 

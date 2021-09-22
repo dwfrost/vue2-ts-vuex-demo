@@ -1,10 +1,10 @@
 <template>
-    <Container class="first-page-wrap">
-        <div>计数：{{ count }}</div>
-        <div>计算属性：{{ computedCount }}</div>
-        <button @click="showCount">显示子组件</button>
-        <Count v-model="show" :count="count" @change="countChange" />
-    </Container>
+  <Container class="first-page-wrap">
+    <div>计数：{{ count }}</div>
+    <div>计算属性：{{ computedCount }}</div>
+    <button @click="showCount">显示子组件</button>
+    <Count v-model="show" :count="count" @change="countChange" />
+  </Container>
 </template>
 
 <script lang="ts">
@@ -14,47 +14,51 @@ import Container from '@/components/Container.vue';
 import Count from './Count.vue';
 
 @Component({
-    name: 'FirstPage',
-    components: {
-        Count,
-        Container,
-    },
+  name: 'FirstPage',
+  components: {
+    Count,
+    Container,
+  },
 })
 export default class FirstPage extends Vue {
-    count = 0;
-    show = true;
+  count = 0;
 
-    @Watch('count')
-    onCountChange(newVal: number, oldVal: number) {
-        console.log(newVal, oldVal);
-    }
+  show = true;
 
-    get computedCount() {
-        return 'computed' + this.count;
-    }
+  @Watch('count')
+  // eslint-disable-next-line class-methods-use-this
+  onCountChange(newVal: number, oldVal: number): void {
+    console.log(newVal, oldVal);
+  }
 
-    created() {
-        console.log('created');
-    }
-    mounted() {
-        console.log('mounted');
-    }
+  get computedCount(): string {
+    return `computed${this.count}`;
+  }
 
-    countChange(count: number) {
-        this.count = count;
-    }
-    showCount() {
-        this.show = true;
-    }
+  created(): void {
+    console.log('created', this.count);
+  }
+
+  mounted(): void {
+    console.log('mounted', this.count);
+  }
+
+  countChange(count: number): void {
+    this.count = count;
+  }
+
+  showCount(): void {
+    this.show = true;
+  }
 }
 </script>
 
 <style lang="less" scoped>
 .wrap {
-    padding-top: 50px;
+  padding-top: 50px;
 }
 div {
-    padding: 10px;
-    text-align: center;
+  padding: 10px;
+  text-align: center;
 }
 </style>

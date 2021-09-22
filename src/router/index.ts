@@ -3,8 +3,8 @@ import VueRouter, { RouteConfig } from 'vue-router';
 
 Vue.use(VueRouter);
 
-const firstPage = () => import(/* webpackChunkName: "firstPage" */ '../views/first-page/index.vue')
-const secondPage = () => import(/* webpackChunkName: "secondPage" */ '../views/second-page/index.vue')
+const firstPage = () => import(/* webpackChunkName: "firstPage" */ '../views/first-page/index.vue');
+const secondPage = () => import(/* webpackChunkName: "secondPage" */ '../views/second-page/index.vue');
 
 const routes: Array<RouteConfig> = [
   {

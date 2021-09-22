@@ -4,22 +4,13 @@
       隐藏子组件
     </button>
     <div>子组件count：{{ count }}</div>
-    <button
-      @click="add"
-      @tap="tap"
-      @listen="listen"
-      @onreadystatechange="onreadystatechange"
-      @onshowitagain="onshowitagain"
-      @haha="haha"
-      @heihei="heihei"
-    >
+    <button @click="add">
       +
     </button>
   </div>
 </template>
 
 <script lang="ts">
-/* eslint-disable @typescript-eslint/no-unused-vars */
 // doc https://github.com/kaorun343/vue-property-decorator
 import { Component, Prop, Emit, VModel, Vue } from 'vue-property-decorator';
 
@@ -43,17 +34,8 @@ export default class Count extends Vue {
     return this.count + 1;
   }
 
-  hide(jsonData: any): void {
-    console.log(1);
+  hide(): void {
     this.show = false;
-    const foo =
-      jsonData &&
-      jsonData.foo &&
-      jsonData.foo.bar &&
-      jsonData.foo.bar.baz &&
-      jsonData.foo.bar.baz.quux &&
-      jsonData.foo.bar.baz.quux.xyzzy;
-    // const a = '123354535435' + '2342423153';
   }
 }
 </script>

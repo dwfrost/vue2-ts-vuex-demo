@@ -1,4 +1,5 @@
 import createPersistedState from 'vuex-persistedstate';
+
 export default [
   createPersistedState({
     paths: ['count'],
@@ -7,5 +8,5 @@ export default [
     //     setItem: (key, value) => uni.setStorageSync(key, value),
     //     removeItem: key => uni.removeStorageSync(key),
     // },
-  })
-]
+  }),
+];
