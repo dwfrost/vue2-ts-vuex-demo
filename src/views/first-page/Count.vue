@@ -1,12 +1,8 @@
 <template>
   <div class="count-wrap" v-show="show">
-    <button @click="hide">
-      隐藏子组件
-    </button>
+    <button @click="hide">隐藏子组件</button>
     <div>子组件count：{{ count }}</div>
-    <button @click="add">
-      +
-    </button>
+    <button @click="add">+</button>
   </div>
 </template>
 
@@ -22,12 +18,12 @@ export default class Count extends Vue {
   @Prop({
     default: 0,
   })
-  count!: number;
+  count!: number
 
   @VModel({
     default: false,
   })
-  show!: boolean;
+  show!: boolean
 
   @Emit('change')
   add(): number {
