@@ -64,6 +64,7 @@ export default class Second extends Vue {
 .wrap {
   padding-top: 50px;
 }
+
 div {
   padding: 10px;
   text-align: center;
