@@ -18,12 +18,12 @@ export default class Count extends Vue {
   @Prop({
     default: 0,
   })
-  count!: number
+  count!: number;
 
   @VModel({
     default: false,
   })
-  show!: boolean
+  show!: boolean;
 
   @Emit('change')
   add(): number {

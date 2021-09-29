@@ -13,4 +13,4 @@ module.exports = {
     'operator-linebreak': 'off',
     'object-curly-newline': 'off',
   },
-}
+};

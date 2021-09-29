@@ -1,0 +1,32 @@
+{
+  // vscode设置
+  "editor.formatOnSave": true, // 保存时使用默认格式化插件格式化
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true // 保存时修复lint
+  },
+  // 对指定文件类型进行格式化，统一使用vs-code-prettier-eslint，需要安装prettier-eslint插件，同时它依赖eslint和prettier插件
+  "[vue]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+  "[less]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  }
+}
