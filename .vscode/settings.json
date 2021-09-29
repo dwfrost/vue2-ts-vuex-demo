@@ -24,6 +24,12 @@
   "[less]": {
     "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
   },
+  "[scss]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+  "[sass]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
   "[jsonc]": {
     "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
   },
